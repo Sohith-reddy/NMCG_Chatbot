@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error</title>
+    <link rel="icon" type="image/x-icon" href="https://nmcg.nic.in/images/nmcgNew.jpg">
+    <style>
+    </style>
+   <link rel="stylesheet" href="/static/styles/styles.css">
+</head>
+
+<body>
+
+    <div class="bgimg-1">
+        <div class="caption">
+            <h1><span class="border">404 Error!</span><br></h1>
+            <span class="border">Webpage Under Development</span>
+            <p>The current date and time is: <span id="dynamic-time"></span></p>
+            <hr>
+            <footer>
+                <p>Issued by the development team</p>
+            </footer>
+            <script>
+                function updateDateTime() {
+                    const dateTimeElement = document.getElementById("dynamic-time");
+                    const currentTime = new Date();
+                    dateTimeElement.innerText = currentTime.toLocaleString();
+                }
+                updateDateTime();
+                setInterval(updateDateTime, 1000);
+            </script>
+        </div>
+    </div>
+</body>
+</html>

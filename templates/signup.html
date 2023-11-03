@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet"  href="{{url_for("static",filename="style.css")}}"> -->
+    <link rel="stylesheet" href="/static/styles/styles2.css">
+    <link rel="icon" type="image/x-icon" href="https://nmcg.nic.in/images/nmcgNew.jpg">
+    <title>Signup Page</title>
+    <!-- <script src="/static/scripts/scripts.js"></script> -->
+</head>
+    <form action="" method="post">
+    <body class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+      
+                  <div class="mb-md-5 mt-md-4 pb-5">
+      
+                    <h2 class="fw-bold mb-2 text-uppercase">Signup Page</h2>
+                    <p class="text-white-50 mb-5">Please enter all the required fields(mandatory)</p>
+      
+                    <div class="form-outline form-white mb-4">
+                      <label class="form-label" for="typeEmailX">Enter Email <span class="star-display">(*)</span></label>
+                      <input type="email" id="typeEmailX" class="form-control form-control-lg" required placeholder="john.wick@email.com"/>
+                    </div>
+
+                    <div class="form-outline form-white mb-4">
+                        <label class="form-label" for="typePasswordX">First Name <span class="star-display">(*)</span></label> 
+                      <input type="text/number" id="typePasswordX" class="form-control form-control-lg" required placeholder="John"/>
+                    </div> 
+
+                    <div class="form-outline form-white mb-4">
+                        <label class="form-label" for="typePasswordX">Last Name <span class="star-display">(*)</span></label> 
+                      <input type="text/number" id="typePasswordX" class="form-control form-control-lg" required placeholder="Wick"/>
+                    </div> 
+      
+                    <div class="form-outline form-white mb-4">
+                        <label class="form-label" for="typePasswordX">Password<span class="star-display">(*)</span></label> 
+                      <input type="password" id="typePasswordX" class="form-control form-control-lg" required placeholder="********"/>
+                    </div> 
+
+                    <div class="form-outline form-white mb-4">
+                        <label class="form-label" for="typePasswordX">Confirm Password <span class="star-display">(*)</span></label> 
+                      <input type="password" id="typePasswordX" class="form-control form-control-lg" required placeholder="********"/>
+                    </div>
+                    <div></div>
+      
+                    <!-- <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p> -->
+      
+                    <button class="btn btn-outline-light btn-lg px-5" id="signup-button" type="submit" required>Signup</button>
+      
+                  </div>
+
+                  <div>
+                    <p class="mb-0">Already had an account? <a href="/login" class="text-white-50 fw-bold" style="text-decoration: none;">Log In</a></p>
+                    <p class="paragraph-date-time"><span id="dynamic-time" class="time-date"></span></p>
+                  </div>
+                  <div>
+                    <span class="star-display">(*) </span>&rarr; Indicates required fields to be filled.
+                  </div>
+                  <div class="footer-rights">
+                    <p>Copyrights &#169; Project GANGA | All rights reserved</p>
+               </div>
+                </div>
+              </div>z
+            </div>
+          </div>
+        </div>
+    </form>
+        <script>
+            function updateDateTime() {
+                var dateTimeElement = document.getElementById('dynamic-time');
+                var currentDateTime = new Date();
+                dateTimeElement.innerHTML = currentDateTime.toLocaleString();
+            }
+            setInterval(updateDateTime, 1000);
+        </script>
+    </body>
+</html>

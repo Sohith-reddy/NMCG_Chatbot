@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet"  href="{{url_for("static",filename="style.css")}}"> -->
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="icon" type="image/x-icon" href="https://nmcg.nic.in/images/nmcgNew.jpg">
+    <title>National Mission for Clean Ganga</title>
+    <script src="/static/script.js"></script>
+  </head>
+  <body>
+    <header>
+        <nav>
+            <div class="container-fluid nav-1">
+                <div class="row">
+                    <div class="col-md-4 col-6 d-flex justify-content-start align-items-center">
+                        <a href="https://www.facebook.com/cleanganganmcg/" target="_blank" onclick="showAlert();" rel="noopener"><i class="fa-brands fa-facebook-f ps-4 nav-icon"></i></a>
+                        <a href="https://twitter.com/cleanganganmcg" target="_blank" onclick="showAlert(); " rel="noopener"><i class="fa-brands fa-twitter ps-2 nav-icon"></i></a>
+                        <a href="https://www.youtube.com/channel/UCdslrfFfeUDBQHNPDK6q8YQ" target="_blank" onclick="showAlert();" rel="noopener"><i class="fa-brands fa-youtube ps-2 nav-icon"></i></a>
+                        <a href="https://www.instagram.com/namamigange/" target="_blank" onclick="showAlert();" rel="noopener"><i class="fa-brands fa-square-instagram ps-2 nav-icon"></i></a>
+                        <!--<h6 class="date ms-2 mt-2">11/oct/2023</h6>-->
+                        <h6 class="date ms-2 mt-2"><span id="currentDateTime"></span></h6>
+                    </div>
+                    <div class="col-md-8 col-6 d-flex justify-content-end text-dark align-items-center">
+                       <div id="nav1_text">A  |  -A  |  A  |  +A  | <a href="#main-content" class="main-content-page"><span class="text-light">Skip to Main Content</span></a> |  RTI  |  Grievance  |  Downloads  |  हिन्दी संस्करण |<a href="/login" class="login-page-entry" onclick="showAlert();"> Login </a>|</div>
+                       <div class="nav-search ms-2 d-flex justify-content-evenly text-dark align-items-center"><i class="fa-solid fa-magnifying-glass text-light"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid nav-2">
+                <div class="row d-flex justify-content-between align-items-center">
+                    <div class="col-2">
+                        <!-- <img src="{{url_for("static",filename="images/satyamev_jayate.png")}}" class="img-fluid" alt=""> -->
+                        <a href="#"><img src="{{url_for("static",filename="images/satyamev_jayate.png")}}" class="img-fluid" alt=""></a>
+                    </div>
+                    <div class="col-7">
+                        <!-- <a href='#'><img src="{{url_for("static",filename="images/nmcg_logo.png")}}" class="img-fluid" alt="" margin="auto"></a></a> -->
+                        <a href='#'><img src="https://nmcg.nic.in/images/newnmlogo.png" class="img-fluid" alt="" margin="auto"></a>
+        
+                    </div>
+                    <div class="col-3 d-flex justify-content-end pe-4">
+                        <img src="{{url_for("static",filename="images/nmcgGif.gif")}}" class="img-fluid" alt="" height="90" width="120">
+                        <div class="d-flex align-items-center"><a href="https://g20.mygov.in/"><img src="{{url_for("static",filename="images/g20-logo.png")}}" class="img-fluid" alt=""></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid nav-3" id="main-content">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand nav3-text" href="/home">HOME</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                        <a class="nav-link d-flex nav3-text" href="/about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ABOUT
+                            <div class="d-flex align-items-center ps-1 pt-1"><i class="fa-solid fa-angle-down fa-2xs"></i></div>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item drop-text" href="/about/action">Action</a></li>
+                            <li><a class="dropdown-item drop-text" href="/about/anotheraction">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item drop-text" href="/about/something">Something else here</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link d-flex nav3-text" href="/divisions" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            DIVISIONS
+                            <div class="d-flex align-items-center ps-1 pt-1"><i class="fa-solid fa-angle-down fa-2xs"></i></div>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a class="dropdown-item drop-text" href="/divisions/action">Action</a></li>
+                            <li><a class="dropdown-item drop-text" href="/division/anotheraction">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item drop-text" href="/division/something">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link d-flex nav3-text" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            GANGA BASIN
+                            <div class="d-flex align-items-center ps-1 pt-1"><i class="fa-solid fa-angle-down fa-2xs"></i></div>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a class="dropdown-item drop-text" href="#">Action</a></li>
+                            <li><a class="dropdown-item drop-text" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item drop-text" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link d-flex nav3-text" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            GANGA COMMITTEE
+                            <div class="d-flex align-items-center ps-1 pt-1"><i class="fa-solid fa-angle-down fa-2xs"></i></div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item drop-text" href="#">Action</a></li>
+                                <li><a class="dropdown-item drop-text" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item drop-text" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link d-flex nav3-text" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            PUBLIC OUTREACH
+                            <div class="d-flex align-items-center ps-1 pt-1"><i class="fa-solid fa-angle-down fa-2xs"></i></div>
+                            </a>
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item drop-text" href="#">Action</a></li>
+                                <li><a class="dropdown-item drop-text" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item drop-text" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link d-flex nav3-text" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            RELATED LINKS
+                            <div class="d-flex align-items-center ps-1 pt-1"><i class="fa-solid fa-angle-down fa-2xs"></i></div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item drop-text" href="#">Action</a></li>
+                                <li><a class="dropdown-item drop-text" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item drop-text" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link d-flex nav3-text" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            CLEAN GANGA FUND
+                            <div class="d-flex align-items-center ps-1 pt-1"><i class="fa-solid fa-angle-down fa-2xs"></i></div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item drop-text" href="#">Action</a></li>
+                                <li><a class="dropdown-item drop-text" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item drop-text" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link d-flex nav3-text" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            GALLERY
+                            <div class="d-flex align-items-center ps-1 pt-1"><i class="fa-solid fa-angle-down fa-2xs"></i></div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item drop-text" href="#">Action</a></li>
+                                <li><a class="dropdown-item drop-text" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item drop-text" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link d-flex nav3-text" href="/chatbot" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            CHATBOT
+                            <div class="d-flex align-items-center ps-1 pt-1"><i class="fa-solid fa-angle-down fa-2xs"></i></div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item drop-text" href="/chatbot/main" rel="no-referrer">Ask any question?</a></li>
+                                <li><a class="dropdown-item drop-text" href="/chatbot/queries" rel="no-referrer">Queries on it!</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item drop-text" href="/chatbot/feedback" rel="no-referrer">Feedback</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                </nav>
+            </div>
+        </nav>
+    </header>
+    <div id="carouselExample" class="carousel slide carousel-fade car"  data-bs-ride="carousel">
+        <!-- <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <link rel="stylesheet"  href="{{url_for("static",filename="style.css")}}">
+        </div> -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{{url_for("static",filename="images/slidess/slide4.jpg")}}" class="d-block w-100 img-fluid" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{url_for("static",filename="images/slidess/slide2.jpg")}}" class="d-block w-100 img-fluid" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{url_for("static",filename="images/slidess/slide3.jpg")}}" class="d-block w-100 img-fluid" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{url_for("static",filename="images/slidess/slide1.jpg")}}" class="d-block w-100 img-fluid" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="main-body">
+        <div class="container my-4 main d-flex pt-5">
+            <div >
+                <img src="{{url_for("static",filename="images/chacha/Chacha-Choudhary-Bobblehead.webp")}} class="img-fluid rounded-circle chacha1 border border-dark shadow" alt="">
+            </div>
+            <div class="ps-3 pt-2">
+                <h2>Introduction :</h2>
+                <p class="fst-italic text-break">Well, folks, let me tell you about the magnificent Ganga River. It's not just a river; it's the lifeline of India, a river that flows through the heart and soul of our country. Ganga, also known as the Ganges, isn't just water; it's the elixir of life for millions. It begins its journey high up in the Himalayas, where the purest waters originate. As it cascades down, it nourishes the lands, people, and the rich culture that thrives along its banks. Ganga is not just a river; it's a symbol of purity and spirituality, a river where millions find solace, a river that has witnessed the ebb and flow of history for millennia.The Ganga's cultural and historical significance is immense. It has been the backdrop to countless stories, from the ancient epics of the Ramayana and Mahabharata to modern tales of devotion and inspiration. The riverbanks are dotted with iconic cities like Varanasi, Haridwar, and Allahabad, which host some of India's most important religious and cultural gatherings.</p>
+            </div>
+            <div class="col-md-3 d-flex justify-content-end rounded">
+                <img src="{{url_for("static",filename="images/chacha/Chacha-Choudhary-Bobblehead.webp")}} class="img-fluid rounded" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- <footer><p>Total visitors <span class="visitor-count">{{ visitor_count }}</span></p></footer> -->
+    <footer>
+        <div class="footer">
+            <!-- <div class="footer-first">
+                <h3></h3>
+            </div> -->
+            <div class="footer-second">
+                <ul>
+                    <li>Preview</li>
+                    <li>About Me</li>
+                    <li>Achivements</li>
+                    <!-- <li>List of Projects done/to be done</li> -->
+                    <li>Social accounts</li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <ul>
+                    <li>Preview</li>
+                    <li>About Me</li>
+                    <li>Achivements</li>
+                    <!-- <li>List of Projects done/to be done</li> -->
+                    <li>Social accounts</li>
+                </ul>
+            </div>
+            <div class="footer-fourth">
+                <ul>
+                    <li>Preview</li>
+                    <li>About Me</li>
+                    <li>Achivements</li>
+                    <!-- <li>List of Projects done/to be done</li> -->
+                    <li>Social accounts</li>
+                </ul>
+                
+            </div>
+        </div>
+        <div class="footer-rights">
+             Copyrights &#169; Project GANGA | All rights reserved
+        </div>
+    </footer>
+    <script>
+        function updateDateTime() {
+            var dateTimeElement = document.getElementById('currentDateTime');
+            var currentDateTime = new Date();
+            dateTimeElement.innerHTML = currentDateTime.toLocaleString();
+        }
+        setInterval(updateDateTime, 1000);
+    </script>
+    <script>
+        function showAlert() {
+            alert("You are going to redirect to an external Webpage!Please enter with Caution!!!!!");
+        }
+    </script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
