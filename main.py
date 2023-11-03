@@ -2,7 +2,7 @@ from flask import Flask,render_template,redirect,url_for,flash,jsonify
 from datetime import timedelta
 import sqlalchemy
 app=Flask(__name__)
-app.secret_key="Sohith-NMCG"
+app.secret_key="Team-NMCG"
 app.permanent_session_lifetime=timedelta(days=15)
 visitor_count=0
 @app.route('/',methods=['POST','GET'])
